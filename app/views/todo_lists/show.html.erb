@@ -1,0 +1,23 @@
+<div class="container" style="display:">
+<p id="notice"><%= notice %></p>
+<h2 class="todo_list_title"><%= @todo_list.title %></h2>
+<p class="todo_list_sub_title"><%= @todo_list.description %></p>
+
+<div id="todo_items_wrapper">
+ <%= render @todo_list.todo_items %>
+ <br />
+
+ <div id="form">
+  <%= render "todo_items/form" %>
+ </div>
+
+<br />
+ <div class="row clearfix links">
+ <%= link_to 'Edit', edit_todo_list_path(@todo_list) %> 
+ &emsp;
+ <%= button_to "Destroy this todo list", @todo_list, method: :delete %>
+ &emsp;
+ <%= link_to 'Back', todo_lists_path %>
+</div>
+</div>
+</div>

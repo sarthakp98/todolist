@@ -1,0 +1,22 @@
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @todo_lists.each do |todo_list| %>
+    <tr>
+      <td><h2 class="todo_list_title"><%= link_to todo_list.title, todo_list %></h2></td>
+      <td><p class="todo_list_sub_title"><%= todo_list.description %></p></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="links">
+  <%= link_to "New Todo List", new_todo_list_path %>
+</div>
